@@ -1,0 +1,55 @@
+{
+  "name": "gaming-events-streaming",
+  "description": "Streaming pipeline: Pub/Sub → Dataflow → BigQuery + GCS archive",
+  "parameters": [
+    {
+      "name": "project",
+      "label": "GCP Project ID",
+      "helpText": "Your GCP project ID (e.g. 'mythic-aloe-457912-d5')",
+      "paramType": "TEXT",
+      "isOptional": false
+    },
+    {
+      "name": "region",
+      "label": "Dataflow Region",
+      "helpText": "Dataflow region (e.g. 'us-central1')",
+      "paramType": "TEXT",
+      "isOptional": false
+    },
+    {
+      "name": "temp_location",
+      "label": "GCS Temp Location",
+      "helpText": "GCS path for temporary files (e.g. 'gs://my-bucket/dataflow/tmp')",
+      "paramType": "TEXT",
+      "isOptional": false
+    },
+    {
+      "name": "staging_location",
+      "label": "GCS Staging Location",
+      "helpText": "GCS path for staging files (e.g. 'gs://my-bucket/dataflow/staging')",
+      "paramType": "TEXT",
+      "isOptional": false
+    },
+    {
+      "name": "pubsub_topic",
+      "label": "Pub/Sub Topic",
+      "helpText": "Name of the Pub/Sub topic (e.g. 'gaming-events')",
+      "paramType": "TEXT",
+      "defaultValue": "gaming-events"
+    },
+    {
+      "name": "bq_dataset",
+      "label": "BigQuery Dataset",
+      "helpText": "BQ dataset for raw events (e.g. 'gaming')",
+      "paramType": "TEXT",
+      "defaultValue": "gaming"
+    },
+    {
+      "name": "bq_raw_table",
+      "label": "BigQuery Raw Table",
+      "helpText": "BQ table for raw events (e.g. 'raw_events')",
+      "paramType": "TEXT",
+      "defaultValue": "raw_events"
+    }
+  ]
+}
